@@ -1,0 +1,67 @@
+.sidenav {
+    height: 100%;
+    width: 60px;
+    position: fixed;
+    z-index: 1001; /* Ensure the nav bar has the highest visibility */
+    top: 0;
+    left: 0;
+    background-color: #121f29;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 20px;
+  }
+  
+  .sidenav.open {
+    width: 200px;
+  }
+  
+  .sidenav .toggle-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px; /* Align the button to the left */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .sidenav .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  }
+  
+  .sidenav .nav-links a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  .sidenav .nav-links a:hover {
+    background-color: #575757;
+  }
+  
+  .sidenav .nav-links a span {
+    margin-left: 10px;
+    display: none;
+  }
+  
+  .sidenav.open .nav-links a span {
+    display: inline;
+  }
+  
+  .main-content {
+    margin-left: 60px;
+    transition: margin-left 0.5s, width 0.5s;
+    width: calc(100% - 60px); /* Adjust width when nav bar is closed */
+  }
+  
+  .sidenav.open + .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px); /* Adjust width when nav bar is open */
+  }
